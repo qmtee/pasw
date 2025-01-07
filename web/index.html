@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>QUACH MANH THANG</title>
+</head>
+<body>
+<div class="container">
+    <a class="bhome" href="#" id="cat-logo"><img src="logo.png"></a>
+    <div class="profile-card">
+        <div class="img-pro5">
+            <img src="1.jpg" alt="Image 1" class="slider-image">
+            <img src="2.jpg" alt="Image 2" class="slider-image">
+            <img src="4.jpg" alt="Image 4" class="slider-image">
+            <img src="9.jpg" alt="Image 5" class="slider-image">
+            <img src="10.jpg" alt="Image 5" class="slider-image">
+            <img src="11.jpg" alt="Image 5" class="slider-image">
+          </div>
+        <div class="profile-content">
+          <h1 class="name">QUACH MANH THANG</h1>
+          <h3>Cyber Security - dizzfeed</h3>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/thangxuxuki/" <i class="fa-brands fa-facebook"></i> </a>
+            <a href="https://www.tiktok.com/@dizzfeed" <i class="fa-brands fa-github"></i> </a>
+            <a href="https://docs.google.com/forms/d/1lWQh_JgfYaNHCxju7-Uw5QMJJgE-iiXH2CF7smX7yho/edit" <i class="fa-brands fa-discord"></i> </a>
+            </div>
+        </div>
+      </div>
+
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="circle red"></div>
+            <div class="circle yellow"></div>
+            <div class="circle green"></div>
+        </div>
+        <div class="terminal-body">
+        <p>dizzfeed@cybersecurity:<span class="command">~$ Nhập 'inbox' để hiển thị các lệnh:</span></p>
+        <div id="terminal-output"></div>
+        <input type="text" id="terminal-input" autofocus>
+        </div>
+    </div>
+</div>
+<script>
+const images = document.querySelectorAll('.slider-image');
+let currentIndex = 0;
+
+function changeImage() {
+  images[currentIndex].classList.remove('active');
+
+  currentIndex = (currentIndex + 1) % images.length;
+
+  images[currentIndex].classList.add('active');
+}
+
+setInterval(changeImage, 5000);
+images[currentIndex].classList.add('active');
+
+const terminalInput = document.getElementById('terminal-input');
+const terminalOutput = document.getElementById('terminal-output');
+
+terminalInput.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+    const input = terminalInput.value;
+    terminalInput.value = '';
+    processCommand(input);
+  }
+});
+
+function processCommand(input) {
+  const output = document.createElement('p');
+  output.textContent = `dizzfeed@cybersecurity:~$ ${input}`;
+  terminalOutput.appendChild(output);
+
+  const response = document.createElement('p');
+  response.textContent = getResponse(input);
+  terminalOutput.appendChild(response);
+
+  terminalOutput.scrollTop = terminalOutput.scrollHeight;
+}
+
+function getResponse(input) {
+  switch (input.toLowerCase()) {
+    case 'music':
+      return 'hãy ấn vào biểu tưởng chú mèo góc trái màn hình.';
+    case 'inbox':
+      return 'các lệnh sẵn có: music, comment, user, clear';
+    case 'user':
+      return 'Tôi không có gì đặc biệt nhưng tôi là duy nhất.';
+    case 'clear':
+      terminalOutput.innerHTML = '';
+      return '';
+    default:
+      return `Command not found: ${input}`;
+  }
+}
+
+const catLogo = document.getElementById('cat-logo');
+const audio = new Audio('musicweb.mp3');
+
+catLogo.addEventListener('click', function() {
+  audio.play();
+});
+prompt('bạn là người không phải chó: đúng hay sai?');
+</script>
+<footer>
+    <p>&copy;2024 Copyright By dizzfeed. All rights reserved!!!</p>
+</footer>
+
+</body>
+</html>

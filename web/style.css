@@ -1,0 +1,151 @@
+html {
+    scrollbar-width: none;
+    overflow: auto;
+  }
+  body {
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: #1d1e1e;
+    font-family: "Courier New", Courier, monospace;
+    color: white;
+    cursor: url("Layer1.png"), default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .container {
+    margin: 0 0 80px 0;
+  }
+  
+  .bhome img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .profile-card {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 450px;
+    margin: 80px 0;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #1e1e2f;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+  }
+  .profile-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: #fff;
+  }
+  .name {
+    font-size: 36px;
+    margin: 0;
+    font-weight: bold;
+  }
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+  }
+  
+  .social-icons a {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s ease;
+  }
+  
+  .social-icons .fa-brands:hover {
+    transform: scale(1.1);
+  }
+  
+  .fa-discord,
+  .fa-github,
+  .fa-facebook {
+    font-size: 50px;
+  }
+  .img-pro5 {
+    position: relative;
+    width: 1200px;
+    height: 450px;
+    overflow: hidden;
+  }
+  .slider-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  .slider-image.active {
+    opacity: 1;
+  }
+  
+  .terminal {
+    margin: 50px 0;
+    width: 100%;
+    max-width: 1200px;
+    height: 500px;
+    background-color: #1e1e2f;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  .terminal-header {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    padding: 8px;
+    background-color: #2e2e3f;
+    border-radius: 25px 25px 0 0;
+  }
+  .circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 4px;
+  }
+  .red {
+    background-color: red;
+  }
+  .yellow {
+    background-color: yellow;
+  }
+  .green {
+    background-color: green;
+  }
+  .terminal-body {
+    text-align: left;
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #1e1e2f;
+    border-radius: 0 0 8px 8px;
+  }
+  #terminal-input { width: 100%; background-color: #1e1e1e; border: none; color: #fff; font-family: 'YourFontFamily', monospace; outline: none; padding: 5px; margin-top: 10px; }
+  .command {
+    color: #00d4ff;
+  }
+  
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+  }
